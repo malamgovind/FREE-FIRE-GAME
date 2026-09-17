@@ -1,1025 +1,1182 @@
-.contener {
-  /* background-color: lightblue; */
-  background-color: rgb(37, 36, 36);
-  top: 50px;
-  left: 50px;
-  width: 2410px;
-  height: 1085px;
-  position: relative;
-  border: 10px solid aqua;
-  box-shadow: 20px 20px 30px 2px rgb(15, 15, 15);
+/* ==========================================================================
+   Free Fire Max Web Experience - Responsive Full-Viewport Stylesheet
+   ========================================================================== */
+
+/* --- 1. CSS Variables & Design System --- */
+:root {
+  --ff-gold: #ffc700;
+  --ff-gold-glow: rgba(255, 199, 0, 0.4);
+  --ff-orange: #ff9900;
+  --ff-accent: #ff4757;
+  --ff-dark-bg: #0f1115;
+  --ff-surface: rgba(20, 24, 33, 0.92);
+  --ff-surface-border: rgba(255, 255, 255, 0.12);
+  --ff-text: #ffffff;
+  --ff-text-muted: #a0a6b5;
+
+  /* Facebook Branding */
+  --fb-blue: #1877f2;
+  --fb-blue-hover: #166fe5;
+  --fb-green: #42b72a;
+  --fb-green-hover: #36a420;
+  --fb-card-bg: #242526;
+  --fb-input-bg: #3a3b3c;
+  --fb-border: #3e4042;
+  --fb-text: #e4e6eb;
+  --fb-text-secondary: #b0b3b8;
+
+  /* Google Branding */
+  --g-dark-bg: #202124;
+  --g-input-bg: #171717;
+  --g-blue: #1a73e8;
+  --g-blue-light: #8ab4f8;
+  --g-blue-hover: #aecbfa;
+  --g-border: #5f6368;
+  --g-text: #e8eaed;
+  --g-text-secondary: #9aa0a6;
+
+  /* Typography */
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* .contener2 {
-  list-style-position: inside;
-  background: linear-gradient(to right,
-          rgba(0, 168, 204, 0.3),
-          rgba(223, 189, 0, 0.3),
-          rgba(54, 38, 199, 0.3));
-} */
+/* --- 2. Universal Reset & Base Styles --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-main);
+  background-color: var(--ff-dark-bg);
+  color: var(--ff-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- 3. Master Container (.contener) --- */
+.contener {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: var(--ff-dark-bg);
+  transition: background 0.4s ease;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine {
+  box-sizing: border-box;
+}
+
+/* --- 4. Section 1: Play Store Preview (.one) --- */
+.one {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 24px;
+}
+
+.one[style*="display: block"] {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
 
 .one img {
-  position: relative;
-  width: 600px;
-  top: 265px;
-  left: 300px;
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  display: block;
+  margin: 0 auto;
 }
 
 .one .hed1 {
-  position: relative;
-  font-size: 60px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.one .hed1 h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
-  left: 950px;
-  top: -300px;
-  /* color: white; */
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+.one .hed1 h1 u {
+  text-decoration: none;
+  border-bottom: 3px solid var(--ff-gold);
 }
 
 .one .hed1 h5 {
-  margin-top: -20px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #00d2d3;
+  margin-top: 4px;
 }
 
 .one .hed1 p {
-  height: 30px;
-  margin-top: -50px;
+  font-size: 1rem;
+  color: var(--ff-text-muted);
+  margin-bottom: 12px;
 }
 
 .one .hed1 #play {
-  position: relative;
-  margin-top: -20px;
-  font-size: 30px;
-  width: 180px;
-  height: 50px;
-  border: 5px solid black;
-  color: black;
-  background-color: yellow;
+  height: 52px;
+  padding: 0 42px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #000000;
+  background: linear-gradient(135deg, #ffc700, #ff9500);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px var(--ff-gold-glow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.one .hed1 #play:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 199, 0, 0.6);
+}
+
+.one .hed1 #play:active {
+  transform: translateY(0);
+}
+
+/* --- 5. Section 2: Splash Screen (.two) --- */
+.two {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.two[style*="display: block"] {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
 .two #one_img {
-  width: 2410px;
-  height: 1080px;
-  animation: govind 5s linear;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: govind 4s ease-in-out forwards;
 }
 
 @keyframes govind {
   0% {
     opacity: 0;
+    transform: scale(1.04);
   }
-
-  50% {
-    opacity: 0.5;
+  30% {
+    opacity: 0.7;
   }
-
-  75% {
+  70% {
     opacity: 1;
   }
-
   100% {
-    opacity: 1.4;
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
+/* --- 6. Section 3: Loading Screen (.three) --- */
 .three {
-  display: flex;
-  /* background-color: red; */
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: 100vw;
   height: 100vh;
-  margin: 0;
-  /* background-color: #f03838; */
-  font-family: Arial, sans-serif;
-  background-image: url(./3.jpg);
-  /* background-size:cover; */
-  /* background-repeat: no-repeat; */
-  /* background-size: auto; */
-  background-repeat: no-repeat;
-  width: 2410px;
-  height: 980px;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.5) 65%, rgba(0, 0, 0, 0.88) 100%),
+              url(./3.jpg) no-repeat center center / cover;
+  overflow: hidden;
+  padding: 40px 24px;
+}
+
+.three[style*="display: block"] {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .three .h1 {
-  position: relative;
-  font-size: 50px;
-  margin-left: 450px;
-  top: 880px;
+  font-size: clamp(1.15rem, 2.8vw, 1.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  max-width: 820px;
+  margin: 0 0 24px 0;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
+  line-height: 1.4;
+  letter-spacing: 0.5px;
 }
 
 .three .loading-bar-contener {
-  width: 80%;
-  height: 16px;
-  background-color: #a88787;
-  border-radius: 10px;
+  width: min(92%, 680px);
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
   overflow: hidden;
-  margin-bottom: 20px;
-  position: relative;
-  left: 250px;
-  top: 820px;
-  /* right: 40px; */
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 215, 0, 0.2);
+  margin: 0 0 12px 0;
 }
 
 .three .loading-bar {
   height: 100%;
-  width: 0;
-  background-color: #f5e725;
-  transition: width 0.1s linear;
-  /* margin-top: -50px; */
+  width: 0%;
+  background: linear-gradient(90deg, #ff8c00, #ffd700, #fff7a0);
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.85);
+  border-radius: 999px;
+  transition: width 0.05s linear;
 }
 
-.three .counter {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #000000;
-  position: relative;
-}
-
+.three .counter,
 .three #counter {
-  /* padding-left: 30px; */
-  width: 280px;
-  height: 50px;
-  top: 850px;
-  left: 1100px;
-  /* right: 50px; */
-  /* background-color: rgb(157, 174, 197); */
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+  margin: 0 0 20px 0;
+  letter-spacing: 1px;
+  text-align: center;
+  width: auto;
+  height: auto;
 }
 
+/* --- 7. Section 4: Terms Confirmation Dialog (.four) --- */
 .four {
-  background-color: black;
-  color: white;
-  /* background: url(/00_project/06-web/z900.jpg); */
-  /* background-size: cover; */
-  position: relative;
-  font-size: 50px;
-  /* top: -800px; */
-  top: 330px;
-  border: 5px solid black;
-  box-shadow: 15px 15px 10px 2px rgb(249, 177, 255);
-
-  /* padding-top: -100px; */
-  padding-bottom: 50px;
-  padding-left: 3px;
-  height: 320px;
-  width: 630px;
-  left: 900px;
-  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92%, 480px);
+  max-height: 90vh;
+  background: var(--ff-surface);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--ff-surface-border);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(0, 200, 255, 0.2);
+  padding: 28px 24px;
+  z-index: 100;
+  color: #e4e6eb;
 }
 
 .four .mix {
-  position: relative;
-  color: red;
-  top: -50px;
-  height: 175px;
-  /* border-bottom: 5px solid black; */
-  /* background-color: yellow; */
-  text-decoration: underline white 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  text-decoration: none;
 }
 
-/* .four h3 {
-  position: relative;
-  height: 50px;
-  margin-top: -50px;
-} */
+.four h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ff-gold);
+  letter-spacing: 0.5px;
+}
 
 .four .icon {
-  position: relative;
-  left: 570px;
-  bottom: 110px;
-  color: red;
+  cursor: pointer;
+  color: var(--ff-text-muted);
+  font-size: 1.4rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.four .icon:hover {
+  color: var(--ff-accent);
+  transform: scale(1.1);
 }
 
 .four p {
-  font-size: 40px;
-  position: relative;
-  top: -160px;
-  left: 50px;
-  height: 20px;
+  font-size: 1.05rem;
+  color: #d1d5db;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
 }
 
 .four a {
-  position: relative;
-  /* top: -50px; */
-  color: yellow;
-  font-size: 30px;
-  /* background: url(/00_project/06-web/); */
+  color: #00d2d3;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 18px;
+  margin-bottom: 26px;
+  border-bottom: 1px dashed #00d2d3;
+  transition: color 0.2s ease;
 }
 
-.four .A1 {
-  position: relative;
-  top: -170px;
-  /* bottom: 50px; */
-  left: 190px;
-  z-index: 1;
-}
-
-.four .A2 {
-  position: relative;
-  top: -120px;
-  /* bottom: 50px; */
-  /* left: -0px; */
-  right: 15px;
-  z-index: 1;
+.four a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 
 .four #okay {
-  position: relative;
-  height: 40px;
-  width: 140px;
-  font-size: 25px;
-  color: black;
-  background-color: rgb(90, 236, 156);
-  left: 217px;
-  top: -110px;
-}
-
-.five {
-  input[type="checkbox"] {
-    width: 25px;
-    height: 25px;
-  }
-}
-
-.five .hed h1 {
-  position: relative;
-  color: yellow;
-  text-align: right;
-  right: 80px;
-  top: -250px;
-  font-size: 50px;
-  text-shadow: 2px 6px 5px rgb(232, 255, 216);
-}
-
-.five .login {
-  /* font-size: 50px; */
-  position: relative;
-  left: 1000px;
-  top: 800px;
-  width: 400px;
-  height: 200px;
-}
-
-.five #a1 {
-  position: relative;
-  left: 10px;
-  top: 700px;
-  font-size: 25px;
-  width: 700px;
-}
-
-.five #a1 a {
-  color: yellow;
-}
-
-.five #a2 {
-  position: relative;
-  left: 10px;
-  top: 710px;
-  font-size: 25px;
-  width: 700px;
-}
-
-.five #a2 a {
-  color: yellow;
-}
-
-.five .login #Facebook {
-  width: 400px;
+  width: 100%;
   height: 50px;
-  font-size: 30px;
-  color: white;
-  border: 1px solid black;
-  background-color: blue;
+  background: linear-gradient(135deg, #10ac84, #1dd1a1);
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba(29, 209, 161, 0.4);
 }
 
-.five .login p {
+.four #okay:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(29, 209, 161, 0.6);
+}
+
+.four #okay:active {
+  transform: translateY(0);
+}
+
+/* --- 8. Section 5: Main Game Screen with Video Background (.five) --- */
+.five {
   position: relative;
-  left: 110px;
-  font-size: 35px;
-  top: -20px;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-.five .login #Guest {
-  position: relative;
-  width: 150px;
-  height: 40px;
-  font-size: 25px;
-  left: 30px;
-  top: -30px;
-  border: 2px solid black;
-  background-color: white;
-  color: black;
-}
-
-.five .login #Google {
+.five .video-container {
   position: absolute;
-  width: 150px;
-  height: 40px;
-  font-size: 25px;
-  left: 225px;
-  /* top: px; */
-  bottom: 28px;
-  border: 2px solid black;
-  background-color: white;
-  color: black;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
 }
 
 .five #bg-video {
-  position: relative;
   width: 100%;
-  height: 1090px;
+  height: 100%;
   object-fit: cover;
-  background-size: cover;
-  bottom: 395px;
-  /* transform: rotate(60dg); */
-  z-index: -1;
+  display: block;
 }
 
+.five .video-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.75) 100%);
+  pointer-events: none;
+}
+
+.five .hed {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  z-index: 2;
+}
+
+.five .hed h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #ffeb3b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 235, 59, 0.5);
+  margin: 0;
+}
+
+.five .content {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: min(92%, 480px);
+  background: var(--ff-surface);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--ff-surface-border);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.five .login {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.five .login #Facebook {
+  width: 100%;
+  flex: 0 0 100%;
+  height: 48px;
+  background: var(--fb-blue);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.35);
+}
+
+.five .login #Facebook:hover:not(:disabled) {
+  background: var(--fb-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(24, 119, 242, 0.5);
+}
+
+.five .login p {
+  width: 100%;
+  flex: 0 0 100%;
+  text-align: center;
+  color: var(--ff-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 2px 0;
+  letter-spacing: 1px;
+}
+
+.five .login #Guest {
+  flex: 1 1 calc(50% - 6px);
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.five .login #Guest:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.five .login #Google {
+  flex: 1 1 calc(50% - 6px);
+  height: 44px;
+  background: #ffffff;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.five .login #Google:hover:not(:disabled) {
+  background: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.five .login button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+  filter: grayscale(40%);
+  pointer-events: none;
+}
+
+.five #a1,
+.five #a2 {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+.five #a1 input[type="checkbox"],
+.five #a2 input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--ff-gold);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.five #a1 a,
+.five #a2 a {
+  color: var(--ff-gold);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ff-gold);
+}
+
+.five #a1 a:hover,
+.five #a2 a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+/* --- 9. Section 6: Facebook Login Sub-page (.six) --- */
 .six {
-  position: relative;
-  left: 950px;
-  top: 190px;
-  border: 5px solid black;
-  box-shadow: 5px 5px 8px 2px rgb(238, 210, 239);
-  background-color: rgb(47, 48, 48);
-  width: 500px;
-  height: 600px;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 60px 20px;
+  background-color: #18191a;
+}
+
+.six[style*="display: block"] {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.six .detail {
+  max-width: 440px;
 }
 
 .six .detail h1 {
-  position: relative;
-  left: 150px;
-  top: 20px;
-  color: blue;
-  font-size: 50px;
-  text-decoration: underline;
-  font-family: 'Times New Roman';
-  /* background-color: transparent; */
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  color: var(--fb-blue);
+  margin: 0 0 12px 0;
+  letter-spacing: -1px;
+  text-decoration: none;
 }
 
 .six .detail p {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--fb-text);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.six .login-page {
+  width: 100%;
+  max-width: 400px;
+  background: var(--fb-card-bg);
+  border: 1px solid var(--fb-border);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 24px 20px 28px;
   position: relative;
-  left: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.six .login-page .email {
-  position: relative;
-  top: 50px;
-  left: 50px;
-  width: 380px;
-  height: 30px;
-  font-size: 22px;
-  font-family: 'Times New Roman';
-  padding-left: 10px;
-  border: 1px solid rgb(133, 131, 131);
-  border-radius: 3px;
-  background-color: rgb(236, 241, 246);
-}
-
-.six .login-page .email::placeholder {
-  position: relative;
-  font-family: 'Times New Roman';
-  font-size: 22px;
-  /* font-weight: bold; */
-  color: rgb(68, 66, 66);
-  margin-top: 2px;
-  padding-left: 5px;
-  top: 0.7px;
-}
-
-.six .login-page .email:focus {
-  outline: none;
-}
-
+.six .login-page .email,
 .six .login-page .password {
-  position: relative;
-  top: 80px;
-  left: 50px;
-  width: 383px;
-  height: 30px;
-  font-size: 22px;
-  font-family: 'Times New Roman';
-  padding-left: 10px;
-  border: 1px solid rgb(133, 131, 131);
-  border-radius: 3px;
-  background-color: rgb(236, 241, 246);
-}
-
-.six .login-page .password::placeholder {
-  position: relative;
-  font-family: 'Times New Roman';
-  font-size: 22px;
-  color: rgb(68, 66, 66);
-  left: 5px;
-}
-
-.six .login-page .password:focus {
+  width: 100%;
+  height: 50px;
+  border: 1px solid var(--fb-border);
+  border-radius: 6px;
+  background: var(--fb-input-bg);
+  color: var(--fb-text);
+  font-size: 1rem;
+  padding: 0 16px;
   outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.six .login-page .email:focus,
+.six .login-page .password:focus {
+  border-color: var(--fb-blue);
+  box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.3);
+}
+
+.six .login-page .email::placeholder,
+.six .login-page .password::placeholder {
+  color: var(--fb-text-secondary);
 }
 
 .six .login-page a {
-  position: relative;
-  top: 80px;
-  left: 53px;
-  font-size: 18px;
+  color: #4599ff;
+  font-size: 0.9rem;
+  text-align: center;
   text-decoration: none;
-  text-decoration-thickness: 0.5px;
-  /* width: 120px; */
-  /* background-color: #944949; */
+  margin: 4px 0;
+  transition: text-decoration 0.2s ease;
+}
+
+.six .login-page a:hover {
+  text-decoration: underline;
 }
 
 .six .login-page .btn-login {
+  width: 100%;
+  height: 48px;
+  background: var(--fb-blue);
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 8px rgba(24, 119, 242, 0.35);
+  font-family: inherit;
+}
+
+.six .login-page .btn-login:hover {
+  background: var(--fb-blue-hover);
+}
+
+.six .login-page .btn-login:active {
+  transform: scale(0.99);
+}
+
+.six .login-page .divider-or {
   position: relative;
-  top: 150px;
-  width: 260px;
-  height: 35px;
-  font-size: 20px;
-  color: white;
-  background-color: blue;
-  border: 1px solid rgb(76, 70, 70);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.six .login-page .divider-or .hr,
+.six .login-page .hr {
+  border: none;
+  border-top: 1px solid var(--fb-border);
+  margin: 0;
+  width: 100%;
+}
+
+.six .login-page .divider-or .or,
+.six .login-page .or {
+  position: absolute;
+  background: var(--fb-card-bg);
+  padding: 0 12px;
+  color: var(--fb-text-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .six .login-page .new-btn {
-  position: relative;
-  top: 140px;
-  height: 35px;
-  width: 260px;
-  left: 130px;
-  font-size: 20px;
-  color: white;
-  background-color: blue;
-  border: 1px solid rgb(76, 70, 70);
+  width: fit-content;
+  min-width: 170px;
+  height: 44px;
+  margin: 2px auto 0;
+  background: var(--fb-green);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0 20px;
+  transition: background 0.2s ease, transform 0.1s ease;
+  font-family: inherit;
+  box-shadow: 0 2px 8px rgba(66, 183, 42, 0.35);
 }
 
-.six .login-page .or {
-  position: relative;
-  top: 135px;
-  left: 220px;
-  padding-left: 25px;
-  font-size: 25px;
-  background-color: white;
-  width: 50px;
+.six .login-page .new-btn:hover {
+  background: var(--fb-green-hover);
+}
+
+.six .login-page .new-btn:active {
+  transform: scale(0.99);
 }
 
 .six .login-page .close {
-  position: relative;
-  left: 465px;
-  bottom: 380px;
-  font-size: 27px;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  color: var(--fb-text-secondary);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  line-height: 1;
 }
 
-.six .login-page .hr {
-  position: relative;
-  top: 180px;
+.six .login-page .close:hover {
+  color: var(--ff-accent);
+  transform: scale(1.1);
 }
 
+/* --- 10. Section 7: Facebook Sign Up Sub-page (.seven) --- */
 .seven {
+  width: min(92%, 460px);
+  margin: 50px auto;
+  background: var(--fb-card-bg);
+  border: 1px solid var(--fb-border);
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  padding: 28px 24px;
   position: relative;
-  left: 950px;
-  top: 190px;
-  border: 5px solid black;
-  color: black;
-  box-shadow: 5px 5px 8px 2px rgb(238, 210, 239);
-  background-color: rgb(47, 48, 48);
-  width: 500px;
-  height: 600px;
+  color: var(--fb-text);
 }
 
 .seven h1 {
-  position: relative;
-  left: 150px;
-  top: 0px;
-  color: blue;
-  font-size: 50px;
-  text-decoration: underline;
-  font-family: 'Times New Roman';
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--fb-blue);
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+  text-decoration: none;
 }
 
-/* .seven p {
-  position: relative;
-  left: 10px;
-  bottom: 20px;
-} */
 .seven hr {
-  position: relative;
-  bottom: 10px;
-  /* font-size: 30px; */
-  font-weight: bold;
-  color: #000000;
+  border: none;
+  border-top: 1px solid var(--fb-border);
+  margin: 0 0 18px 0;
+}
+
+.seven #first-name,
+.seven #last-name {
+  width: calc(50% - 6px);
+  height: 46px;
+  border: 1px solid var(--fb-border);
+  border-radius: 6px;
+  background: var(--fb-input-bg);
+  color: var(--fb-text);
+  font-size: 0.95rem;
+  padding: 0 12px;
+  margin-bottom: 12px;
+  outline: none;
+  display: inline-block;
+  font-family: inherit;
 }
 
 .seven #first-name {
-  position: relative;
-  top: 10px;
-  left: 20px;
-  width: 200px;
-  height: 30px;
-  font-size: 22px;
-  font-family: 'Times New Roman';
-  padding-left: 10px;
-  border: 1px solid rgb(133, 131, 131);
-  border-radius: 3px;
-  background-color: rgb(236, 241, 246);
+  margin-right: 8px;
 }
 
-.seven #last-name {
-  position: relative;
-  top: 10px;
-  left: 40px;
-  width: 200px;
-  height: 30px;
-  font-size: 22px;
-  font-family: 'Times New Roman';
-  padding-left: 10px;
-  border: 1px solid rgb(133, 131, 131);
-  border-radius: 3px;
-  background-color: rgb(236, 241, 246);
-}
-
-.seven #number-email {
-  position: relative;
-  top: 40px;
-  left: 20px;
-  width: 440px;
-  height: 30px;
-  font-size: 22px;
-  font-family: 'Times New Roman';
-  padding-left: 10px;
-  border: 1px solid rgb(133, 131, 131);
-  border-radius: 3px;
-  background-color: rgb(236, 241, 246);
-}
-
+.seven #number-email,
 .seven #new-password {
-  position: relative;
-  top: 70px;
-  left: 20px;
-  width: 440px;
-  height: 30px;
-  font-size: 22px;
-  font-family: 'Times New Roman';
-  padding-left: 10px;
-  border: 1px solid rgb(133, 131, 131);
-  border-radius: 3px;
-  background-color: rgb(236, 241, 246);
-}
-
-.seven #first-name::placeholder {
-  position: relative;
-  font-family: 'Times New Roman';
-  font-size: 22px;
-  color: rgb(68, 66, 66);
-  left: 5px;
-}
-
-.seven #first-name:focus {
+  width: 100%;
+  height: 46px;
+  border: 1px solid var(--fb-border);
+  border-radius: 6px;
+  background: var(--fb-input-bg);
+  color: var(--fb-text);
+  font-size: 0.95rem;
+  padding: 0 12px;
+  margin-bottom: 12px;
   outline: none;
+  font-family: inherit;
 }
 
-.seven #last-name::placeholder {
-  position: relative;
-  font-family: 'Times New Roman';
-  font-size: 22px;
-  color: rgb(68, 66, 66);
-  left: 5px;
+.seven input:focus {
+  border-color: var(--fb-blue);
+  box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.3);
 }
 
-.seven #last-name:focus {
-  outline: none;
+.seven input::placeholder {
+  color: var(--fb-text-secondary);
 }
 
-.seven #number-email::placeholder {
-  position: relative;
-  font-family: 'Times New Roman';
-  font-size: 22px;
-  color: rgb(68, 66, 66);
-  left: 5px;
-}
-
-.seven #number-email:focus {
-  outline: none;
-}
-
-.seven #new-password::placeholder {
-  position: relative;
-  font-family: 'Times New Roman';
-  font-size: 22px;
-  color: rgb(68, 66, 66);
-  left: 5px;
-}
-
-.seven #new-password:focus {
-  outline: none;
-}
-
-.seven #male {
-  position: relative;
-  color: white;
-  top: 100px;
-  left: 20px;
-  font-size: 20px;
-}
-
-.seven #female {
-  color: white;
-  position: relative;
-  top: 110px;
-  left: 20px;
-  font-size: 20px;
-}
-
+.seven #male,
+.seven #female,
 .seven #other {
-  color: white;
-  position: relative;
-  left: 20px;
-  top: 120px;
-  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(33.333% - 6px);
+  height: 42px;
+  border: 1px solid var(--fb-border);
+  border-radius: 6px;
+  background: var(--fb-input-bg);
+  padding: 0 10px;
+  margin-bottom: 18px;
+  color: var(--fb-text);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.seven #male,
+.seven #female {
+  margin-right: 5px;
+}
+
+.seven #male input,
+.seven #female input,
+.seven #other input {
+  accent-color: var(--fb-blue);
+  cursor: pointer;
 }
 
 .seven .sign-up {
-  position: relative;
-  top: 150px;
-  height: 35px;
-  width: 260px;
-  left: 130px;
-  font-size: 20px;
-  color: white;
-  background-color: blue;
-  border: 1px solid rgb(76, 70, 70);
+  width: 100%;
+  height: 48px;
+  background: var(--fb-green);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 8px rgba(66, 183, 42, 0.35);
+  font-family: inherit;
+}
+
+.seven .sign-up:hover {
+  background: var(--fb-green-hover);
+}
+
+.seven .sign-up:active {
+  transform: scale(0.99);
 }
 
 .seven p {
-  position: relative;
-  top: 180px;
-  left: 100px;
-  font-size: 20px;
-  color: green;
-  /* text-decoration: underline; */
+  text-align: center;
+  color: var(--fb-text-secondary);
+  font-size: 0.95rem;
+  margin: 18px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .seven p .log-in {
-  position: relative;
-  /* top: 150px; */
-  width: 150px;
-  height: 25px;
-  font-size: 20px;
-  color: white;
-  background-color: blue;
-  border: 1px solid rgb(76, 70, 70);
-  border-radius: 8px;
+  background: none;
+  border: none;
+  color: #4599ff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  transition: text-decoration 0.2s ease;
 }
 
-.seven .close {
-  position: relative;
-  left: 465px;
-  bottom: 399px;
-  font-size: 27px;
+.seven p .log-in:hover {
+  text-decoration: underline;
 }
 
-.eight {
-  position: relative;
-  left: 950px;
-  top: 190px;
-  border: 5px solid black;
-  box-shadow: 5px 5px 8px 2px rgb(236, 225, 236);
-  background-color: rgb(58, 61, 61);
-  width: 500px;
-  height: 600px;
-  /* opacity: 0.8; */
+.seven .close#close02 {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: var(--fb-text-secondary);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.eight #google {
-  position: relative;
-  width: 200px;
-  height: 90px;
-  top: 20px;
-  left: 140px;
-  /* background-color: red; */
+.seven .close#close02:hover {
+  color: var(--ff-accent);
+  transform: scale(1.1);
 }
 
-.eight hr {
+/* --- 11. Section 8 & 9: Google Login & Sign Up Sub-pages (.eight, .nine) --- */
+.eight,
+.nine {
+  width: min(92%, 420px);
+  margin: 50px auto;
+  background: var(--g-dark-bg);
+  border: 1px solid #3c4043;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+  padding: 32px 28px 36px;
   position: relative;
-  top: 20px;
+  color: var(--g-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.eight #google,
+.nine #google {
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 16px auto;
+  display: block;
+}
+
+.eight hr,
+.nine hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #3c4043;
+  margin: 0 0 20px 0;
+}
+
+/* Google segmented tabs */
+.eight #btn-one,
+.eight #btn-two,
+.nine #btn-three,
+.nine #btn-four {
+  height: 40px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  display: inline-block;
+}
+
+/* In .eight: Log In (#btn-one) is ACTIVE, Sign In (#btn-two) is INACTIVE */
 .eight #btn-one {
-  position: relative;
-  top: 65px;
-  left: 75px;
-  width: 120px;
-  height: 30px;
-  border: 0.2px solid white;
-  font-size: 20px;
-  border-radius: 25px;
-  color: white;
-  background: linear-gradient(to right,
-      rgba(49, 103, 185),
-      rgba(48, 143, 199),
-      rgba(54, 38, 199));
-  background-color: transparent;
+  background: var(--g-blue);
+  color: #ffffff;
+  width: 48%;
+  margin-right: 4%;
+  margin-bottom: 22px;
+  border: none;
 }
 
 .eight #btn-two {
-  position: relative;
-  width: 120px;
-  height: 30px;
-  top: 67px;
-  left: 170px;
-  /* font-size: 20px; */
-  border: 0.2px solid white;
-  font-size: 20px;
-  border-radius: 25px;
-  color: white;
-  /* color: rgb(0, 0, 0); */
-  background: linear-gradient(to right,
-      rgba(49, 103, 185),
-      rgba(48, 143, 199),
-      rgba(54, 38, 199));
-  background-color: transparent;
+  background: transparent;
+  color: var(--g-text-secondary);
+  border: 1px solid var(--g-border);
+  width: 48%;
+  margin-bottom: 22px;
 }
 
-.eight .g-log-email {
-  position: relative;
-  top: 130px;
-  right: -100px;
-  width: 280px;
-  height: 30px;
-  font-size: 22px;
-  font-family: 'Times New Roman';
-  padding-left: 10px;
-  border: 1px solid rgb(133, 131, 131);
-  border-radius: 3px;
-  color: white;
-  background-color: black;
+.eight #btn-two:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--g-text);
 }
 
-.eight .g-log-email::placeholder {
-  position: relative;
-  font-family: 'Times New Roman';
-  font-size: 22px;
-  color: rgb(101, 100, 100);
-  left: 5px;
-}
-
-.eight .g-log-email:focus {
-  outline: none;
-}
-
-.eight .g-log-password {
-  position: relative;
-  top: 150px;
-  left: 100px;
-  width: 280px;
-  height: 30px;
-  font-size: 22px;
-  font-family: 'Times New Roman';
-  padding-left: 10px;
-  border: 1px solid rgb(133, 131, 131);
-  /* border-top: none; */
-  /* border-bottom-right-radius: 20px; */
-  color: white;
-  background-color: black;
-}
-
-.eight .g-log-password::placeholder {
-  position: relative;
-  font-family: 'Times New Roman';
-  font-size: 22px;
-  color: rgb(101, 100, 100);
-  left: 5px;
-}
-
-.eight .g-log-password:focus {
-  outline: none;
-}
-
-.eight .g-login {
-  position: relative;
-  top: 250px;
-}
-
-.eight #forget02 {
-  position: absolute;
-  text-decoration: none;
-  top: 395px;
-  right: 265px;
-  font-size: 18px;
-  color: blue;
-  font-weight: bolder;
-  opacity: 0.7;
-  /* background-color: red;
-  width: 200px; */
-}
-
-.eight .g-login {
-  position: absolute;
-  top: 440px;
-  right: 100px;
-  width: 120px;
-  height: 30px;
-  font-size: 20px;
-  /* padding-bottom: 5px;*/
-  padding-top: -5px;
-  background-color: rgb(79, 219, 182);
-  color: blue;
-}
-
-.eight .g-login:focus {
-  outline: none;
-}
-
-.eight .x-mark01 {
-  position: absolute;
-  color: black;
-  /* width: 100px; */
-  font-size: 25px;
-  left: 465px;
-  bottom: 560px;
-}
-
-/* ----------------------- */
-
-.nine {
-  position: relative;
-  left: 950px;
-  top: 190px;
-  border: 5px solid black;
-  box-shadow: 5px 5px 8px 2px rgb(236, 225, 236);
-  background-color: rgb(58, 61, 61);
-  width: 500px;
-  height: 600px;
-  /* opacity: 0.8; */
-}
-
-.nine #google {
-  position: relative;
-  width: 200px;
-  height: 90px;
-  top: 20px;
-  left: 140px;
-  /* background-color: red; */
-}
-
-.nine hr {
-  position: relative;
-  top: 20px;
-}
-
+/* In .nine: Log In (#btn-three) is INACTIVE, Sign In (#btn-four) is ACTIVE */
 .nine #btn-three {
-  position: relative;
-  top: 65px;
-  left: 75px;
-  width: 120px;
-  height: 30px;
-  border: 0.2px solid white;
-  font-size: 20px;
-  border-radius: 25px;
-  color: white;
-  background: linear-gradient(to right,
-      rgba(49, 103, 185),
-      rgba(48, 143, 199),
-      rgba(54, 38, 199));
-  background-color: transparent;
+  background: transparent;
+  color: var(--g-text-secondary);
+  border: 1px solid var(--g-border);
+  width: 48%;
+  margin-right: 4%;
+  margin-bottom: 22px;
+}
+
+.nine #btn-three:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--g-text);
 }
 
 .nine #btn-four {
-  position: relative;
-  width: 120px;
-  height: 30px;
-  top: 67px;
-  left: 170px;
-  /* font-size: 20px; */
-  border: 0.2px solid white;
-  font-size: 20px;
-  border-radius: 25px;
-  color: white;
-  /* color: rgb(0, 0, 0); */
-  background: linear-gradient(to right,
-      rgba(49, 103, 185),
-      rgba(48, 143, 199),
-      rgba(54, 38, 199));
-  background-color: transparent;
+  background: var(--g-blue);
+  color: #ffffff;
+  width: 48%;
+  margin-bottom: 22px;
+  border: none;
 }
 
-.nine .g-log-email {
-  position: relative;
-  top: 130px;
-  right: -100px;
-  width: 280px;
-  height: 30px;
-  font-size: 22px;
-  font-family: 'Times New Roman';
-  padding-left: 10px;
-  border: 1px solid rgb(133, 131, 131);
-  border-radius: 3px;
-  color: white;
-  background-color: black;
-}
-
-.nine .g-log-email::placeholder {
-  position: relative;
-  font-family: 'Times New Roman';
-  font-size: 22px;
-  color: rgb(101, 100, 100);
-  left: 5px;
-}
-
-.nine .g-log-email:focus {
-  outline: none;
-}
-
-.nine .g-log-password {
-  position: relative;
-  top: 150px;
-  left: 100px;
-  width: 280px;
-  height: 30px;
-  font-size: 22px;
-  font-family: 'Times New Roman';
-  padding-left: 10px;
-  border: 1px solid rgb(133, 131, 131);
-  /* border-top: none; */
-  /* border-bottom-right-radius: 20px; */
-  color: white;
-  background-color: black;
-}
-
-.nine .g-log-password::placeholder {
-  position: relative;
-  font-family: 'Times New Roman';
-  font-size: 22px;
-  color: rgb(101, 100, 100);
-  left: 5px;
-}
-
-.nine .g-log-password:focus {
-  outline: none;
-}
-
+/* Inputs in Google modal */
+.eight .g-log-email,
+.eight .g-log-password,
+.nine .g-log-email,
+.nine .g-log-password,
 .nine .g-log-corrent-pass {
-  position: relative;
-  top: 170px;
-  left: 100px;
-  width: 280px;
-  height: 30px;
-  font-size: 22px;
-  font-family: 'Times New Roman';
-  padding-left: 10px;
-  border: 1px solid rgb(133, 131, 131);
-  /* border-top: none; */
-  /* border-bottom-right-radius: 20px; */
-  color: white;
-  background-color: black;
-}
-
-.nine .g-log-corrent-pass::placeholder {
-  position: relative;
-  font-family: 'Times New Roman';
-  font-size: 22px;
-  color: rgb(101, 100, 100);
-  left: 5px;
-}
-
-.nine .g-log-corrent-pass:focus {
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--g-border);
+  border-radius: 6px;
+  background: var(--g-input-bg);
+  color: var(--g-text);
+  font-size: 1rem;
+  padding: 0 16px;
+  margin-bottom: 16px;
   outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
 }
 
-
-.nine .g-login {
-  position: relative;
-  top: 250px;
+.eight input:focus,
+.nine input:focus {
+  border-color: var(--g-blue-light);
+  box-shadow: 0 0 0 1px var(--g-blue-light);
 }
 
-/* .eight #forget02 {
-  position: absolute;
+.eight input::placeholder,
+.nine input::placeholder {
+  color: var(--g-text-secondary);
+}
+
+.eight #forget02 {
+  color: var(--g-blue-light);
+  font-size: 0.9rem;
+  font-weight: 500;
   text-decoration: none;
-  top: 395px;
-  right: 265px;
-  font-size: 18px;
-  color: blue;
-  font-weight: bolder;
-  opacity: 0.7;
-} */
+  margin-top: 14px;
+  text-align: center;
+  transition: text-decoration 0.2s ease;
+}
 
+.eight #forget02:hover {
+  text-decoration: underline;
+}
+
+.eight .g-login,
 .nine .g-login {
-  position: absolute;
-  top: 470px;
-  right: 100px;
-  width: 120px;
-  height: 30px;
-  font-size: 20px;
-  /* padding-bottom: 5px;*/
-  padding-top: -5px;
-  background-color: rgb(79, 219, 182);
-  color: blue;
+  width: 100%;
+  height: 46px;
+  background: var(--g-blue-light);
+  color: #202124;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  margin-top: 10px;
+  font-family: inherit;
 }
 
-.nine .g-login:focus {
-  outline: none;
+.eight .g-login:hover,
+.nine .g-login:hover {
+  background: var(--g-blue-hover);
 }
 
+.eight .g-login:active,
+.nine .g-login:active {
+  transform: scale(0.99);
+}
+
+.eight .x-mark01,
 .nine .x-mark02 {
   position: absolute;
-  color: black;
-  /* width: 100px; */
-  font-size: 25px;
-  left: 465px;
-  bottom: 560px;
+  top: 16px;
+  right: 16px;
+  color: var(--g-text-secondary);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.eight .x-mark01:hover,
+.nine .x-mark02:hover {
+  color: var(--ff-accent);
+  transform: scale(1.1);
+}
+
+/* --- 12. Responsive Media Queries --- */
+@media (max-width: 768px) {
+  .one {
+    padding: 30px 16px;
+  }
+
+  .one[style*="display: block"] {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .one .hed1 {
+    align-items: center;
+  }
+
+  .one img {
+    max-width: 280px;
+  }
+
+  .five .hed {
+    top: 16px;
+    right: 16px;
+  }
+
+  .five .hed h1 {
+    font-size: 1.6rem;
+  }
+
+  .five .content {
+    bottom: 16px;
+    width: calc(100% - 24px);
+    padding: 20px 16px;
+  }
+
+  .six {
+    padding: 30px 16px;
+  }
+
+  .six[style*="display: block"] {
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .six .detail {
+    text-align: center;
+  }
+
+  .seven,
+  .eight,
+  .nine {
+    margin: 30px auto;
+    padding: 24px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seven #first-name,
+  .seven #last-name {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .seven #male,
+  .seven #female,
+  .seven #other {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
